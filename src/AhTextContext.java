@@ -51,20 +51,20 @@ public class AhTextContext extends PApplet implements TuioObserver {
 	 */
 	public static void main(String args[]) {		
 		
-		PApplet.main(new String[] { "AhTextContext" });	
+		PApplet.main(new String[] {"--present",  "AhTextContext" });	
 	}
 
 	@Override
 	public void setup() {
 
-		size(screen.width, screen.height, JAVA2D);
+		size(1280, 800, JAVA2D);
 		// off screen rendering buffer
 		pg = createGraphics(screen.width, screen.height, P2D);
 
 		// add Full Screen support for OSX to hide top menu bar
 		fs = new FullScreen(this);
 		fs.setShortcutsEnabled(false);
-		fs.enter();  //enable/disable Full Screen
+		//fs.enter();  //enable/disable Full Screen
 
 		// load and set the font
 		ahTextFont = loadFont("Helvetica-24.vlw");

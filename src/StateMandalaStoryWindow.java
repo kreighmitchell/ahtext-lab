@@ -21,7 +21,7 @@ public class StateMandalaStoryWindow implements StateInterface {
 	}
 
 	public void touchEventAddCursor(long sessionID, int cursorX, int cursorY) {
-		if (cursorX < 100 && cursorY < 100) {
+		if (cursorX < (int)(ahTextContext.width * 0.07) && cursorY < (int)(ahTextContext.height * 0.11)) {
 			ahTextContext.tuioHandler.removeAllObservers();
 			ahTextContext.tuioHandler.registerObserver(ahTextContext);
 			ahTextContext.myMessage = new OscMessage("/mode");

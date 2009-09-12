@@ -70,7 +70,7 @@ public class ZoneCollection implements TuioObserver {
 				tzones.get(touchEventIsInsideThisZone).setX(cursorX); 			// then update position
 				tzones.get(touchEventIsInsideThisZone).setY(cursorY);
 			}
-		} else if (cursorY > ahTextContext.height - 100 && sessionIDIsNotAlive(zoneName)) {
+		} else if (cursorY > ahTextContext.height - (int)(ahTextContext.height * 0.11) && sessionIDIsNotAlive(zoneName)) {
 			//Pack and send OSC
 			ahTextContext.myMessage = new OscMessage("/animate/new");
 			ahTextContext.myMessage.add((int)zoneName);

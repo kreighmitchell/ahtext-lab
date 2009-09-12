@@ -163,7 +163,7 @@ public class MandalaNode implements TuioObserver {
 	}
 
 	public void tuioCursorUpdate(long sessionID, int cursorX, int cursorY) {
-		if (over(nodeCenterX, nodeCenterY, cursorX, cursorY)) {
+	/*	if (over(nodeCenterX, nodeCenterY, cursorX, cursorY)) {
 			resetNodeTouchTimer();
 			shouldFade = true;
 			if (triggerActive) {
@@ -178,7 +178,7 @@ public class MandalaNode implements TuioObserver {
 			shouldFade = false;
 			resetNodeTouchTimer();
 			triggerActive = false;
-		}
+		}*/
 	}
 
 	public void tuioCursorRemove(long sessionID) {

@@ -47,7 +47,7 @@ public class TuioHandler implements TuioListener, TuioSubject {
 	}
 
 	public void removeAllObservers(){
-				observers.clear();
+		observers.clear();
 	}
 
 	public void notifyObserverOfAddedCursor() {
@@ -104,11 +104,13 @@ public class TuioHandler implements TuioListener, TuioSubject {
 	 */
 	public void addTuioCursor(TuioCursor tcur) {
 		//System.out.println("add cursor "+tcur.getCursorID()+" ("+tcur.getSessionID()+ ") " +tcur.getX()+" "+tcur.getY());
-		this.cursorX = tcur.getScreenX(parent.width);
-		this.cursorY = tcur.getScreenY(parent.height);
-		this.sessionID = tcur.getSessionID();
-		notifyObserverOfAddedCursor();
-		tuioEventsChanged();
+		if(tcur.getScreenX(parent.width) != 0 && tcur.getScreenY(parent.height) != 0){
+			this.cursorX = tcur.getScreenX(parent.width);
+			this.cursorY = tcur.getScreenY(parent.height);
+			this.sessionID = tcur.getSessionID();
+			notifyObserverOfAddedCursor();
+			tuioEventsChanged();
+		}
 	}
 
 	/**
@@ -165,13 +167,13 @@ public class TuioHandler implements TuioListener, TuioSubject {
 		notifyObserverOfAddedCursor();
 		resetTouchTimer();
 	}
-	
+
 	public void mouseEventsDragged(){
 		sessionID = mouseSessionID;
 		notifyObserverOfUpdatedCursor();
 		resetTouchTimer();
 	}
-	
+
 	public void mouseEventsReleased(){
 		sessionID = mouseSessionID;
 		notifyObserverOfUpdatedCursor();
