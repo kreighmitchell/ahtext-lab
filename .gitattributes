@@ -1,0 +1,8 @@
+src/** linguist-detectable=true
+src/** linguist-language=Java
+bin/** linguist-vendored
+lib/** linguist-vendored
+application.linux/** linguist-vendored
+application.macosx/** linguist-vendored
+application.windows/** linguist-vendored
+*.jar linguist-vendored
